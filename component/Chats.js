@@ -17,7 +17,7 @@ function Chats({id, users}) {
 
     useEffect(() => {
         if(lastChat){
-            setLastMesasge(lastChat?.docs[0].data().message)
+            setLastMesasge(lastChat?.docs[0]?.data().message)
         }
     }, [lastChat])
 
