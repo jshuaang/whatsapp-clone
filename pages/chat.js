@@ -33,6 +33,7 @@ function chat({chat, message}) {
 
     const submitMessage = (e) => {
         if(e.charCode === 13){
+          if(msg !== ""){
             db.collection('users').doc(user.uid).set({
                 timestamp: firebase.firestore.FieldValue.serverTimestamp()
             },{ merge: true })
@@ -45,6 +46,7 @@ function chat({chat, message}) {
 
             setMsg('')
             scrollToBottom()
+          }
         }
     }
 

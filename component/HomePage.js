@@ -4,7 +4,7 @@ import Chats from "./Chats"
 import Status from "./Status"
 import {useSelector} from 'react-redux'
 import Footer from "./Footer"
-import {ChatAltIcon} from '@heroicons/react/outline'
+import {ChatAltIcon , CameraIcon} from '@heroicons/react/outline'
 import {useCollection} from 'react-firebase-hooks/firestore'
 import {useAuthState} from 'react-firebase-hooks/auth'
 import {db,auth} from '../firebase'
@@ -33,7 +33,7 @@ function HomePage() {
             {menu === 'status'? <Status /> : null} 
             </div>
 
-            <Footer Icons={ChatAltIcon}/>
+            {menu === 'chats'? <Footer Icons={ChatAltIcon} type={menu}/> : <Footer Icons={CameraIcon} type={menu}/>}
 
         </div>
     )
